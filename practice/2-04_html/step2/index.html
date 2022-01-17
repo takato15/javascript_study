@@ -12,7 +12,7 @@
 <header>
 <div class="container">
 <h1>HTMLを書き換える</h1>
-<h2>要素を取得する</h2>
+<h2>取得した要素のコンテンツを書き換える</h2>
 </div><!-- /.container -->
 </header>
 <main>
@@ -29,7 +29,7 @@
 </footer>
 <script>
 'use strict';
-console.log(document.getElementById('choice'));
+document.getElementById('choice').textContent = new Date();
 </script>
 </body>
 </html>
