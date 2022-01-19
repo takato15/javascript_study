@@ -14,7 +14,7 @@
     <header>
         <div class="container">
             <h1>FizzBuzz</h1>
-            <h2>処理の流れを考えてファンクションを作る</h2>
+            <h2>30までの数でFizzBuzz</h2>
         </div><!-- /.container -->
     </header>
     <main>
@@ -44,7 +44,11 @@
             }
         }
 
-        console.log(fizzbuzz(1));
+        let i = 1;
+        while (i <= 30) {
+            console.log(fizzbuzz(i));
+            i += 1;
+        }
     </script>
 </body>
 
