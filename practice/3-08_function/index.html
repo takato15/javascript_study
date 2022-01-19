@@ -14,15 +14,13 @@
     <header>
         <div class="container">
             <h1>税込価格を計算する</h1>
-            <h2>HTMLに出力する</h2>
+            <h2>ファンクションを作る・呼び出す</h2>
         </div><!-- /.container -->
     </header>
     <main>
         <div class="container">
             <section>
-                <p id="output"></p>
-                <p id="output2"></p>
-                <p id="output3"></p>
+
             </section>
         </div><!-- /.container -->
     </main>
@@ -40,9 +38,6 @@
         }
 
         console.log('コーヒーメーカーの値段は' + total(8000) + '円（税込）です。');
-        document.getElementById('output').textContent = 'コーヒーメーカーの値段は' + total(8000) + '円（税込）です。';
-        document.getElementById('output2').textContent = 'コーヒーフィルターの値段は' + total(200) + '円（税込）です。';
-        document.getElementById('output3').textContent = 'コーヒー豆の値段は' + total(1000) + '円（税込）です。';
     </script>
 </body>
 
