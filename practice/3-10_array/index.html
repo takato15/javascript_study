@@ -14,13 +14,13 @@
     <header>
         <div class="container">
             <h1>項目をリスト表示する</h1>
-            <h2>項目を追加する</h2>
+            <h2>項目一つひとつを&lt;li&gt;〜&lt;/li&gt;で囲む</h2>
         </div><!-- /.container -->
     </header>
     <main>
         <div class="container">
             <section>
-                <h1>やることリスト</h1>
+
             </section>
         </div><!-- /.container -->
     </main>
@@ -35,7 +35,8 @@
         let todo = ['デザインカンプ作成', 'データ整理', '勉強会申し込み', '牛乳買う'];
         todo.push('歯医者に行く');
         for (let item of todo) {
-            console.log(item);
+            const li = `<li>${item}</li>`;
+            console.log(li);
         }
     </script>
 </body>
