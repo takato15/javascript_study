@@ -14,13 +14,15 @@
     <header>
         <div class="container">
             <h1>項目をリスト表示する</h1>
-            <h2>項目一つひとつを&lt;li&gt;〜&lt;/li&gt;で囲む</h2>
+            <h2>項目をHTMLに出力する</h2>
         </div><!-- /.container -->
     </header>
     <main>
         <div class="container">
             <section>
-
+                <h1>やることリスト</h1>
+                <ul id="list">
+                </ul>
             </section>
         </div><!-- /.container -->
     </main>
@@ -36,7 +38,7 @@
         todo.push('歯医者に行く');
         for (let item of todo) {
             const li = `<li>${item}</li>`;
-            console.log(li);
+            document.getElementById('list').insertAdjacentHTML('beforeend', li);
         }
     </script>
 </body>
