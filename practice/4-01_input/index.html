@@ -14,15 +14,17 @@
     <header>
         <div class="container">
             <h1>フォームの入力内容を取得する</h1>
-            <h2>まずはイベントをテスト</h2>
+            <h2>入力内容を読み取って出力</h2>
         </div><!-- /.container -->
     </header>
     <main>
         <div class="container">
             <section>
                 <form action="#" id="form">
+                    <input type="text" name="word">
                     <input type="submit" value="検索">
                 </form>
+                <p id="output"></p>
             </section>
         </div><!-- /.container -->
     </main>
@@ -34,8 +36,10 @@
     <script>
         'use strict';
 
-        document.getElementById('form').onsubmit = function () {
-            console.log('クリックされました');
+        document.getElementById('form').onsubmit = function (event) {
+            event.preventDefault();
+            const search = document.getElementById('form').word.value;
+            document.getElementById('output').textContent = `「${search}」の検索中...`;
         };
     </script>
 </body>
