@@ -15,7 +15,7 @@
     <header>
         <div class="container">
             <h1>プライバシーポリシー承認パネルを作る</h1>
-            <h2>クッキーの読み・書き・削除</h2>
+            <h2>クッキーの内容に応じてパネルを削除する</h2>
         </div><!-- /.container -->
     </header>
     <main>
@@ -41,12 +41,13 @@
         'use strict';
 
         const agree = Cookies.get('cookie-agree');
+        const panel = document.getElementById('privacy-panel');
         if (agree === 'yes') {
-            console.log('クッキーを確認しました');
+            document.body.removeChild(panel);
         } else {
-            console.log('クッキーを確認できません');
             document.getElementById('agreebtn').onclick = function () {
                 Cookies.set('cookie-agree', 'yes', { expires: 7 });
+                document.body.removeChild(panel);
             };
         }
 
