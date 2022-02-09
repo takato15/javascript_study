@@ -45,6 +45,10 @@
             height: 16px;
             background: url(images/arrow-right.svg) no-repeat;
         }
+
+        #page {
+            color: white;
+        }
     </style>
 </head>
 
@@ -52,7 +56,7 @@
     <header>
         <div class="container">
             <h1>スライドショー</h1>
-            <h2>ボタンクリックで画像を切り替える</h2>
+            <h2>何枚目の画像か表示する</h2>
         </div><!-- /.container -->
     </header>
     <main>
@@ -65,6 +69,7 @@
                     <div class="toolbar">
                         <div class="nav">
                             <div id="prev"></div>
+                            <div id="page"></div>
                             <div id="next"></div>
                         </div>
                     </div>
@@ -87,8 +92,15 @@
             if (current + num >= 0 && current + num < images.length) {
                 current += num;
                 document.getElementById('main_image').src = images[current];
+                pageNum();
             }
         };
+
+        function pageNum() {
+            document.getElementById('page').textContent = `${current + 1}/${images.length}`;
+        }
+
+        pageNum();
 
         document.getElementById('prev').onclick = function () {
             changeImage(-1);
