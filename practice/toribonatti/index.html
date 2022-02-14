@@ -1,54 +1,62 @@
 <html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <title>トリボナッチ数列</title>
-  <script type="text/javascript">
-    function Hello() {
-      var t1 = document.getElementById("t1");
-      var i = 0, cnt = 1;
-      k = eval(t1.value);
-      var box = new Array(k);
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>トリボナッチ数列</title>
+    <script type="text/javascript">
+      function Calculation() {
+        var t1 = document.getElementById("t1");
+        var i = 0, cnt = 1;
 
-      box[0] = 1;
-      box[1] = 0;
-      box[2] = 5;
-      document.getElementById("debug").innerHTML = ("<br>");
-      while (cnt <= k) {
-        if (i < 3) {
-          document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
+        // 入力値
+        k = eval(t1.value);
+        var box = new Array(k);
+
+        // 初期数値
+        box[0] = 1;
+        box[1] = 0;
+        box[2] = 5;
+
+        document.getElementById("debug").innerHTML = ("<br>");
+
+        // 入力された回数繰り返す
+        while (cnt <= k) {
+          // box[0,1,2]時の計算
+          if (i < 3) {
+            document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
+          }
+          // box[3]以降の計算
+          else {
+            box[i] = box[i - 1] + box[i - 2] + box[i - 3];
+            document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
+          }
+          cnt++;
+          i++;
         }
-        else {
-          box[i] = box[i - 1] + box[i - 2] + box[i - 3];
-          document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
-        }
-        cnt++;
-        i++;
+        document.getElementById("debug").innerHTML += ("<br>");
       }
-      document.getElementById("debug").innerHTML += ("<br>");
-    }
-  </script>
+    </script>
 
-  <style type="text/css">
-    body {
-      color: #cc3300;
-    }
-  </style>
-</head>
+    <style type="text/css">
+      body {
+        color: green;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
 
-  <h3>トリボナッチ数列を求める</h3>
+    <h3>トリボナッチ数列を求める</h3>
 
-  <form>
-    n=<input id="t1" type="text" size="14">
-    <input type="button" value="計算する" onClick="Hello()" size="15">
-  </form>
-  <br>
-  <div id="debug">
-    ここに結果が表示される
-  </div>
+    <form>
+      n=<input id="t1" type="text" size="14">
+      <input type="button" value="計算する" onClick="Calculation()" size="15">
+    </form>
+    <br>
+    <div id="debug">
+      ここに結果が表示される
+    </div>
 
-</body>
+  </body>
 
 </html>
