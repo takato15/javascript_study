@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <title>トリボナッチ数列</title>
-  <script type="text/javascript">
+  <script>
     function Calculation() {
 
       // ループ条件等宣言
@@ -19,23 +19,21 @@
       box[1] = 0;
       box[2] = 5;
 
-      document.getElementById("debug").innerHTML = ("<br>");
-
       // 入力された回数繰り返す
       while (cnt <= k) {
         // box[0,1,2]時の計算
         if (i < 3) {
-          document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
+          document.getElementById("debug").innerHTML += ("n_[" + (i + 1) + "]=" + box[i] + "<br>");
         }
         // box[3]以降の計算
         else {
           box[i] = box[i - 1] + box[i - 2] + box[i - 3];
-          document.getElementById("debug").innerHTML += ("x_[" + (i + 1) + "]=" + box[i] + "<br>");
+          document.getElementById("debug").innerHTML += ("n_[" + (i + 1) + "]=" + box[i] + "<br>");
         }
         cnt++;
         i++;
       }
-      document.getElementById("debug").innerHTML += ("<br>");
+
     }
   </script>
 
@@ -44,19 +42,18 @@
       color: green;
     }
   </style>
+
 </head>
 
 <body>
 
-  <h3>トリボナッチ数列を求める</h3>
-
   <form>
     n=<input id="t1" type="text" size="14">
-    <input type="button" value="計算する" onClick="Calculation()" size="15">
+    <input type="button" value="計算" onClick="Calculation()" size="14">
   </form>
   <br>
   <div id="debug">
-    ここに結果が表示される
+
   </div>
 
 </body>
